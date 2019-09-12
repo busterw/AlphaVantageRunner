@@ -1,0 +1,14 @@
+{
+  "ProjectFilePath": "\\\\GILMOND-S15\\UserShares\\joe.wait\\My Documents\\Projects\\AVRunner\\AVRunner.csproj",
+  "TargetFramework": "netcoreapp2.2",
+  "TagHelpers": [],
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  }
+}
