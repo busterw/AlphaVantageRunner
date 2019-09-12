@@ -1,0 +1,61 @@
+{
+  "format": 1,
+  "restore": {
+    "\\\\GILMOND-S15\\UserShares\\joe.wait\\My Documents\\Projects\\AVRunner\\AVRunner.csproj": {}
+  },
+  "projects": {
+    "\\\\GILMOND-S15\\UserShares\\joe.wait\\My Documents\\Projects\\AVRunner\\AVRunner.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "\\\\GILMOND-S15\\UserShares\\joe.wait\\My Documents\\Projects\\AVRunner\\AVRunner.csproj",
+        "projectName": "AVRunner",
+        "projectPath": "\\\\GILMOND-S15\\UserShares\\joe.wait\\My Documents\\Projects\\AVRunner\\AVRunner.csproj",
+        "packagesPath": "C:\\Users\\joe.wait\\.nuget\\packages\\",
+        "outputPath": "\\\\GILMOND-S15\\UserShares\\joe.wait\\My Documents\\Projects\\AVRunner\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\joe.wait\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://gilmond-nuget/nuget/": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
