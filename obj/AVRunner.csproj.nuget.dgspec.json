@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "\\\\GILMOND-S15\\UserShares\\joe.wait\\My Documents\\Projects\\AVRunner\\AVRunner.csproj": {}
+    "\\\\gilmond-s15\\UserShares\\joe.wait\\My Documents\\Projects\\AVRunner\\AVRunner.csproj": {}
   },
   "projects": {
-    "\\\\GILMOND-S15\\UserShares\\joe.wait\\My Documents\\Projects\\AVRunner\\AVRunner.csproj": {
+    "\\\\gilmond-s15\\UserShares\\joe.wait\\My Documents\\Projects\\AVRunner\\AVRunner.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "\\\\GILMOND-S15\\UserShares\\joe.wait\\My Documents\\Projects\\AVRunner\\AVRunner.csproj",
+        "projectUniqueName": "\\\\gilmond-s15\\UserShares\\joe.wait\\My Documents\\Projects\\AVRunner\\AVRunner.csproj",
         "projectName": "AVRunner",
-        "projectPath": "\\\\GILMOND-S15\\UserShares\\joe.wait\\My Documents\\Projects\\AVRunner\\AVRunner.csproj",
+        "projectPath": "\\\\gilmond-s15\\UserShares\\joe.wait\\My Documents\\Projects\\AVRunner\\AVRunner.csproj",
         "packagesPath": "C:\\Users\\joe.wait\\.nuget\\packages\\",
-        "outputPath": "\\\\GILMOND-S15\\UserShares\\joe.wait\\My Documents\\Projects\\AVRunner\\obj\\",
+        "outputPath": "\\\\gilmond-s15\\UserShares\\joe.wait\\My Documents\\Projects\\AVRunner\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -47,6 +47,10 @@
               "target": "Package",
               "version": "[2.2.0, )",
               "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.2, )"
             }
           },
           "imports": [
