@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using AVRunner.Responses.Models;
 using Newtonsoft.Json.Linq;
 
 namespace AVRunner.Responses

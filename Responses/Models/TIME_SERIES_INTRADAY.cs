@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace AVRunner.Responses{
+namespace AVRunner.Responses.Models{
     public class TIME_SERIES_INTRADAY{
         [JsonProperty("1. open")]
         public string open {get;set;}
