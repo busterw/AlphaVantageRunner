@@ -1,42 +1,45 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Threading.Tasks;
 using AVRunner.Controllers;
 using AVRunner.Responses;
 using AVRunner.Responses.Models;
 using CliFx;
+using CliFx.Services;
 
 namespace AVRunner
 {
     public static class Program
     {
-        public static Task<int> Main(string[] args) =>
-             new CliApplicationBuilder()
-             .AddCommandsFromThisAssembly()
-             .Build()
-             .RunAsync(args);
-
-        /*/async static Task Main(string[] args)
+        public async static Task<int> Main(string[] args)
         {
-            var intraDayRequest = new Request
+
+            //await DebugTestSpace();
+
+            return new CliApplicationBuilder()
+            .AddCommandsFromThisAssembly()
+            .Build()
+            .RunAsync(args).Result;
+        }
+
+        public async static Task DebugTestSpace()
+        {
+            var request = new Request
             {
-                Function = "TIME_SERIES_INTRADAY",
                 Symbol = "MSFT",
-                Interval = "5min",
-                Uri = "https://www.alphavantage.co/query"
+                Function = "GLOBAL_QUOTE"
             };
 
-            //var intraDayResponse = await HttpRequestSender.SendRequest(intraDayRequest);
+            var response = await HttpRequestSender.SendRequest(request);
 
-            //var intraDayResultList = ResponseHandler.HandleResponses<TIME_SERIES_INTRADAY>(intraDayResponse);
+            var responseObject = ResponseHandler.HandleQuoteResponse(response);
 
-            var globalQuoteRequest = new Request
+            foreach (PropertyDescriptor descriptor in TypeDescriptor.GetProperties(responseObject))
             {
-                Function = "GLOBAL_QUOTE",
-                Symbol = "MSFT"
-            };
-
-            var globalQuoteResponse = await HttpRequestSender.SendRequest(globalQuoteRequest);
-            var globalQuoteResults = ResponseHandler.HandleQuoteResponse(globalQuoteResponse);
-        }*/
+                string name = descriptor.Name;
+                object value = descriptor.GetValue(responseObject);
+                Console.WriteLine("{0}={1}", name, value);
+            }
+        }
     }
 }
