@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.2": {
+      "CliFx/0.0.5": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/CliFx.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/CliFx.dll": {}
+        }
+      },
       "Microsoft.NETCore.App/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -220,6 +229,21 @@
     }
   },
   "libraries": {
+    "CliFx/0.0.5": {
+      "sha512": "FASZjog/iGS8X9pOhu9865ZDyWvLGLZdlV0jaugRUh/xGLBXJY5ZBmX9H2P+5iGmhj2PkenxVlwpp+IjuGIzUQ==",
+      "type": "package",
+      "path": "clifx/0.0.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "clifx.0.0.5.nupkg.sha512",
+        "clifx.nuspec",
+        "lib/net45/CliFx.dll",
+        "lib/net45/CliFx.xml",
+        "lib/netstandard2.0/CliFx.dll",
+        "lib/netstandard2.0/CliFx.xml"
+      ]
+    },
     "Microsoft.NETCore.App/2.2.0": {
       "sha512": "7z5l8Jp324S8bU8+yyWeYHXUFYvKyiI5lqS1dXgTzOx1H69Qbf6df12kCKlNX45LpMfCMd4U3M6p7Rl5Zk7SLA==",
       "type": "package",
@@ -721,6 +745,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
+      "CliFx >= 0.0.5",
       "Microsoft.NETCore.App >= 2.2.0",
       "Newtonsoft.Json >= 12.0.2"
     ]
@@ -732,11 +757,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "\\\\gilmond-s15\\UserShares\\joe.wait\\My Documents\\Projects\\AVRunner\\AVRunner.csproj",
+      "projectUniqueName": "C:\\Users\\joe.wait\\Documents\\AVRunner\\AVRunner.csproj",
       "projectName": "AVRunner",
-      "projectPath": "\\\\gilmond-s15\\UserShares\\joe.wait\\My Documents\\Projects\\AVRunner\\AVRunner.csproj",
+      "projectPath": "C:\\Users\\joe.wait\\Documents\\AVRunner\\AVRunner.csproj",
       "packagesPath": "C:\\Users\\joe.wait\\.nuget\\packages\\",
-      "outputPath": "\\\\gilmond-s15\\UserShares\\joe.wait\\My Documents\\Projects\\AVRunner\\obj\\",
+      "outputPath": "C:\\Users\\joe.wait\\Documents\\AVRunner\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -767,6 +792,10 @@
     "frameworks": {
       "netcoreapp2.2": {
         "dependencies": {
+          "CliFx": {
+            "target": "Package",
+            "version": "[0.0.5, )"
+          },
           "Microsoft.NETCore.App": {
             "suppressParent": "All",
             "target": "Package",

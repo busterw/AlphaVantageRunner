@@ -9,3 +9,14 @@
 \\GILMOND-S15\UserShares\joe.wait\My Documents\Projects\AVRunner\obj\Debug\netcoreapp2.2\AVRunner.AssemblyInfo.cs
 \\GILMOND-S15\UserShares\joe.wait\My Documents\Projects\AVRunner\obj\Debug\netcoreapp2.2\AVRunner.dll
 \\GILMOND-S15\UserShares\joe.wait\My Documents\Projects\AVRunner\obj\Debug\netcoreapp2.2\AVRunner.pdb
+C:\Users\joe.wait\Documents\AVRunner\obj\Debug\netcoreapp2.2\AVRunner.csprojAssemblyReference.cache
+C:\Users\joe.wait\Documents\AVRunner\obj\Debug\netcoreapp2.2\AVRunner.csproj.CoreCompileInputs.cache
+C:\Users\joe.wait\Documents\AVRunner\obj\Debug\netcoreapp2.2\AVRunner.AssemblyInfoInputs.cache
+C:\Users\joe.wait\Documents\AVRunner\obj\Debug\netcoreapp2.2\AVRunner.AssemblyInfo.cs
+C:\Users\joe.wait\Documents\AVRunner\obj\Debug\netcoreapp2.2\AVRunner.dll
+C:\Users\joe.wait\Documents\AVRunner\obj\Debug\netcoreapp2.2\AVRunner.pdb
+C:\Users\joe.wait\Documents\AVRunner\bin\Debug\netcoreapp2.2\AVRunner.deps.json
+C:\Users\joe.wait\Documents\AVRunner\bin\Debug\netcoreapp2.2\AVRunner.runtimeconfig.json
+C:\Users\joe.wait\Documents\AVRunner\bin\Debug\netcoreapp2.2\AVRunner.runtimeconfig.dev.json
+C:\Users\joe.wait\Documents\AVRunner\bin\Debug\netcoreapp2.2\AVRunner.dll
+C:\Users\joe.wait\Documents\AVRunner\bin\Debug\netcoreapp2.2\AVRunner.pdb

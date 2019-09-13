@@ -1,17 +1,26 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "4bf20b3f4b187ddd01af96ea47dda577c5263775"
+    "signature": "c83a302ad2214bd052736d0a5aa0a1747d9b1d5f"
   },
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v2.2": {
       "AVRunner/1.0.0": {
         "dependencies": {
+          "CliFx": "0.0.5",
           "Newtonsoft.Json": "12.0.2"
         },
         "runtime": {
           "AVRunner.dll": {}
+        }
+      },
+      "CliFx/0.0.5": {
+        "runtime": {
+          "lib/netstandard2.0/CliFx.dll": {
+            "assemblyVersion": "0.0.5.0",
+            "fileVersion": "0.0.5.0"
+          }
         }
       },
       "Newtonsoft.Json/12.0.2": {
@@ -29,6 +38,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "CliFx/0.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FASZjog/iGS8X9pOhu9865ZDyWvLGLZdlV0jaugRUh/xGLBXJY5ZBmX9H2P+5iGmhj2PkenxVlwpp+IjuGIzUQ==",
+      "path": "clifx/0.0.5",
+      "hashPath": "clifx.0.0.5.nupkg.sha512"
     },
     "Newtonsoft.Json/12.0.2": {
       "type": "package",

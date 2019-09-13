@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "\\\\gilmond-s15\\UserShares\\joe.wait\\My Documents\\Projects\\AVRunner\\AVRunner.csproj": {}
+    "C:\\Users\\joe.wait\\Documents\\AVRunner\\AVRunner.csproj": {}
   },
   "projects": {
-    "\\\\gilmond-s15\\UserShares\\joe.wait\\My Documents\\Projects\\AVRunner\\AVRunner.csproj": {
+    "C:\\Users\\joe.wait\\Documents\\AVRunner\\AVRunner.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "\\\\gilmond-s15\\UserShares\\joe.wait\\My Documents\\Projects\\AVRunner\\AVRunner.csproj",
+        "projectUniqueName": "C:\\Users\\joe.wait\\Documents\\AVRunner\\AVRunner.csproj",
         "projectName": "AVRunner",
-        "projectPath": "\\\\gilmond-s15\\UserShares\\joe.wait\\My Documents\\Projects\\AVRunner\\AVRunner.csproj",
+        "projectPath": "C:\\Users\\joe.wait\\Documents\\AVRunner\\AVRunner.csproj",
         "packagesPath": "C:\\Users\\joe.wait\\.nuget\\packages\\",
-        "outputPath": "\\\\gilmond-s15\\UserShares\\joe.wait\\My Documents\\Projects\\AVRunner\\obj\\",
+        "outputPath": "C:\\Users\\joe.wait\\Documents\\AVRunner\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -42,6 +42,10 @@
       "frameworks": {
         "netcoreapp2.2": {
           "dependencies": {
+            "CliFx": {
+              "target": "Package",
+              "version": "[0.0.5, )"
+            },
             "Microsoft.NETCore.App": {
               "suppressParent": "All",
               "target": "Package",
