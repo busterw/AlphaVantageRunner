@@ -1,13 +1,12 @@
 using System;
 using System.ComponentModel;
-using System.Globalization;
 using System.Threading.Tasks;
 using AVRunner.Helpers;
 using AVRunner.Responses;
-using AVRunner.Responses.Models;
 using CliFx;
 using CliFx.Attributes;
 using CliFx.Services;
+using System.Linq;
 
 namespace AVRunner.Controllers
 {
@@ -29,31 +28,20 @@ namespace AVRunner.Controllers
 
             var responseObject = ResponseHandler.HandleQuoteResponse(response);
 
-            var previousObject = new GLOBAL_QUOTE();
-
             ConsoleHelper.WriteLineWithColor(console, ConsoleColor.Yellow, DateTime.Now);
 
             foreach (PropertyDescriptor descriptor in TypeDescriptor.GetProperties(responseObject))
             {
-                decimal number;
-
                 string name = descriptor.Name;
                 object value = descriptor.GetValue(responseObject);
-
-                object previousValue = descriptor.GetValue(previousObject);
-
-                if (decimal.TryParse(value.ToString(), out number))
-                    if (decimal.Parse(previousValue.ToString()) < decimal.Parse(value.ToString()))
-                        ConsoleHelper.WriteLineWithColor(console, ConsoleColor.Green,("{0}={1}", name, number));
-                    else 
-                        ConsoleHelper.WriteLineWithColor(console, ConsoleColor.Red,("{0}={1}", name, number));
-
+ 
+                if (value.ToString().Contains('%') && value.ToString().Contains('-'))
+                        ConsoleHelper.WriteLineWithColor(console, ConsoleColor.Red, ($"{name} = {value}"));
+                else if (value.ToString().Contains('%'))
+                        ConsoleHelper.WriteLineWithColor(console, ConsoleColor.Green, ($"{name} = {value}"));
                 else
                     console.Output.WriteLine("{0}={1}", name, value);
-
             }
-
-            previousObject = responseObject;
         }
     }
 }

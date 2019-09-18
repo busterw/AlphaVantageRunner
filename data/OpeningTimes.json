@@ -1,0 +1,26 @@
+{
+    "NYSE": {
+        "ExchangeName":"New York Stock Exchange",
+        "Id": "NYSE",
+        "OpeningTime": "14:30:00",
+        "ClosingTime": "21:00:00"
+    },
+    "NASDAQ": {
+        "ExchangeName":"NASDAQ",
+        "Id": "NASDAQ",
+        "OpeningTime": "14:30:00",
+        "ClosingTime": "21:00:00"
+    },
+    "LSE": {
+        "ExchangeName":"London Stock Exchange",
+        "Id": "LSE",
+        "OpeningTime": "08:00:00",
+        "ClosingTime": "16:30:00"
+    },
+    "TSE": {
+        "ExchangeName":"Japan Stock Exchange",
+        "Id": "TSE",
+        "OpeningTime": "00:00:00",
+        "ClosingTime": "06:00:00"
+    }
+}

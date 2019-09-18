@@ -6,6 +6,11 @@ using AVRunner.Responses;
 using AVRunner.Responses.Models;
 using CliFx;
 using CliFx.Services;
+using System.Collections.Generic;
+using System.IO;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Linq;
 
 namespace AVRunner
 {
@@ -13,33 +18,12 @@ namespace AVRunner
     {
         public async static Task<int> Main(string[] args)
         {
-
             //await DebugTestSpace();
 
             return new CliApplicationBuilder()
             .AddCommandsFromThisAssembly()
             .Build()
             .RunAsync(args).Result;
-        }
-
-        public async static Task DebugTestSpace()
-        {
-            var request = new Request
-            {
-                Symbol = "MSFT",
-                Function = "GLOBAL_QUOTE"
-            };
-
-            var response = await HttpRequestSender.SendRequest(request);
-
-            var responseObject = ResponseHandler.HandleQuoteResponse(response);
-
-            foreach (PropertyDescriptor descriptor in TypeDescriptor.GetProperties(responseObject))
-            {
-                string name = descriptor.Name;
-                object value = descriptor.GetValue(responseObject);
-                Console.WriteLine("{0}={1}", name, value);
-            }
         }
     }
 }
