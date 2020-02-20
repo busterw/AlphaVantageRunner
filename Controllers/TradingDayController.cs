@@ -6,7 +6,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using AVRunner.Helpers;
 using AVRunner.Responses;
-using AVRunner.Responses.Models;
 using CliFx;
 using CliFx.Attributes;
 using CliFx.Services;
@@ -21,9 +20,13 @@ namespace AVRunner.Controllers
         [CommandOption("name", 'n', IsRequired = false, Description = "The name of the exchange to time check. Leaving blank will display all of them.")]
         public string Name { get; set; }
         private const string TimeFile = @"Data\OpeningTimes.json";
+
         public async Task ExecuteAsync(IConsole console)
+            => TimeWriter(console);
+
+        private static void TimeWriter(IConsole console)
         {
-            var timeList = JsonToList(TimeFile);
+            var timeList = JsonFileToList(TimeFile);
 
             var timeNow = DateTime.UtcNow;
 
@@ -31,27 +34,26 @@ namespace AVRunner.Controllers
             {
                 if (exchange.ClosingTime > timeNow && exchange.OpeningTime < timeNow)
                 {
-                    exchange.Status = "Open";
+                    exchange.Status = ConsoleStrings.Open;
                     exchange.TimeToClose = exchange.ClosingTime - DateTime.UtcNow;
                 }
                 else
                 {
-                    exchange.Status = "Closed";
-                    exchange.TimeToOpen = (exchange.OpeningTime.AddDays(1) - DateTime.UtcNow < new TimeSpan(24, 0, 0) ?
-                 (exchange.OpeningTime.AddDays(1) - DateTime.UtcNow) :
-                 (exchange.OpeningTime - DateTime.UtcNow));
+                    exchange.Status = ConsoleStrings.Closed;
+                    exchange.TimeToOpen = (exchange.OpeningTime.AddDays(1) - timeNow < new TimeSpan(24, 0, 0) ?
+                 (exchange.OpeningTime.AddDays(1) - timeNow) :
+                 (exchange.OpeningTime - timeNow));
                 }
-
 
                 foreach (PropertyDescriptor descriptor in TypeDescriptor.GetProperties(exchange))
                 {
                     string name = descriptor.Name;
                     object value = descriptor.GetValue(exchange);
 
-                    if (value.ToString() == "Open")
+                    if (value.ToString() == ConsoleStrings.Open)
                         ConsoleHelper.WriteLineWithColor(console, ConsoleColor.Green, ($"{name} = {value}"));
 
-                    else if (value.ToString() == "Closed")
+                    else if (value.ToString() == ConsoleStrings.Closed)
                         ConsoleHelper.WriteLineWithColor(console, ConsoleColor.Red, ($"{name} = {value}"));
 
                     else if (name == "OpeningTime" || name == "ClosingTime")
@@ -63,11 +65,11 @@ namespace AVRunner.Controllers
                         continue;
                     else console.Output.WriteLine($"{name} = {value}", name, value);
                 }
-                ConsoleHelper.WriteLineWithColor(console, ConsoleColor.Yellow, "--------------------");
+                ConsoleHelper.WriteLineWithColor(console, ConsoleColor.Yellow, ConsoleStrings.Divider);
             }
         }
 
-        private static List<ExchangeTimes> JsonToList(string fileLocation)
+        private static List<ExchangeTimes> JsonFileToList(string fileLocation)
         {
             using (StreamReader r = new StreamReader(fileLocation))
             {
@@ -77,14 +79,11 @@ namespace AVRunner.Controllers
                 var list = new List<ExchangeTimes>();
 
                 foreach (var jToken in jsonObject)
-                {
                     list.Add(jToken.First().ToObject<ExchangeTimes>());
-                }
 
                 return list;
             }
         }
-
-
     }
+
 }

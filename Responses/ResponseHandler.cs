@@ -24,15 +24,12 @@ namespace AVRunner.Responses
 
         public static List<T> HandleResponses<T>(string jsonResponse)
         {
-
             var jTokens = ExtractJsonTokens(jsonResponse);
 
             var outputList = new List<T>();
 
             foreach (var jtoken in jTokens)
-            {
                 outputList.Add(jtoken.First().ToObject<T>());
-            }
 
             return outputList;
         }

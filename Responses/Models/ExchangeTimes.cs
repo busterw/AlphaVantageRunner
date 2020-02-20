@@ -1,6 +1,6 @@
 using System;
 
-namespace AVRunner.Responses.Models
+namespace AVRunner.Responses
 {
     public class ExchangeTimes
     {

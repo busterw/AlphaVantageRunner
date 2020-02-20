@@ -16,14 +16,12 @@ namespace AVRunner
 {
     public static class Program
     {
-        public async static Task<int> Main(string[] args)
-        {
-            //await DebugTestSpace();
-
-            return new CliApplicationBuilder()
+        public static int Main(string[] args)
+            => new CliApplicationBuilder()
             .AddCommandsFromThisAssembly()
             .Build()
-            .RunAsync(args).Result;
-        }
+            .RunAsync(args)
+            .Result;
+
     }
 }
